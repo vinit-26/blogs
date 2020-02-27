@@ -1,0 +1,16 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+.about{
+    margin-top: 15vh;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 5vw;
+
+}
+h2{
+    color: darkblue;
+}
+p{
+    color: darkcyan;
+}

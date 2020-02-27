@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row" *ngIf="currentBlog else noBlog">
+    <div class="col-md-12">
+      <h2>{{currentBlog.title}}</h2>
+      <small>Blog Id - {{currentBlog.blogId}}</small> -
+      <p>Posted by {{currentBlog.author}} on {{currentBlog.created | date}}</p>
+      <div [innerHtml]="currentBlog.bodyHtml"></div>
+      <hr>
+      <h5>Category - {{currentBlog.category}}</h5>
+    </div>
+  </div>
+  <ng-template #noBlog>
+    <p class="mt-5 text-center">Please wait...</p>
+  </ng-template>
+  <div class="row" *ngIf="currentBlog"> 
+    <div class="col-md-4">
+
+      <a class="btn btn-primary"  [routerLink]="['/edit',currentBlog.blogId]">Edit</a>
+
+    </div>
+    <div class="col-md-4">
+
+      <a class="btn btn-danger" (click)="deleteThisBlog()">Delete </a>
+
+    </div>
+    <div class="col-md-4">
+
+      <a class="btn btn-warning" (click)="goBackToPreviousPage()">Go Back </a>
+    </div>
+  </div>
+</div>

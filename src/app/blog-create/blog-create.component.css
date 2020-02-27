@@ -1,0 +1,14 @@
+.ng-valid[required], .ng-valid.required{
+    border-left: 2px solid #42a948;
+}
+
+.form-group{
+    margin-top: 2vw;
+    margin-left: 5vw;
+}
+.btn-primary{
+    margin-left: 7vw;
+}
+.alert-danger{
+    margin-left: 6vw;
+}

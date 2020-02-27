@@ -1,0 +1,12 @@
+
+.col-md-12{
+    margin-top: 2vw;
+    padding: 2vh;
+    background-color: darksalmon;
+    border-radius: 10px;
+    text-align: center;
+}
+.col-md-4{
+    margin-top : 2vw;
+    text-align: center;
+}
