@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule,Routes} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -34,16 +34,16 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
-      {path:'home',component:HomeComponent},
-      {path:'',redirectTo:'home',pathMatch:'full'},
-      {path:'create',component:BlogCreateComponent},
-      {path:'blog/:blogId',component:BlogViewComponent},
-      {path:'edit/:blogId',component:BlogEditComponent},
-      {path:'view',component:BlogViewComponent},
-      {path:'about',component:AboutComponent},
+      {path: 'home', component: HomeComponent},
+      {path: '' , redirectTo: 'home', pathMatch: 'full'},
+      {path: 'create', component: BlogCreateComponent},
+      {path: 'blog/:blogId', component: BlogViewComponent},
+      {path: 'edit/:blogId', component: BlogEditComponent},
+      {path: 'view', component: BlogViewComponent},
+      {path: 'about', component: AboutComponent},
     ])
   ],
-  providers: [BlogHttpService,Location],
+  providers: [BlogHttpService, Location],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
