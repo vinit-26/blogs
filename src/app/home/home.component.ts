@@ -19,7 +19,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.blogHttpService.getAllBlogs().subscribe(
       data => {
-        this.allBlogs = data.data;
+        if (data.status !== 404) {
+          this.allBlogs = data.data;
+        } else {
+          this.watingString = data.message;
+        }
       },
       error => {
         this.watingString = 'Error: ' +  error.message;
