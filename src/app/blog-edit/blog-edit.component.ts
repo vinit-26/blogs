@@ -27,17 +27,16 @@ export class BlogEditComponent implements OnInit {
         this.currentBlog = data.data;
       },
       error => {
-        console.log(error);
         this.toastr.error('Some error occured', 'Error');
       });
   }
 
   public editThisBlog(): any {
-      console.log(this.currentBlog);
+
       this.blogHttpService.editBlog(this.currentBlog.myblogId, this.currentBlog).subscribe(
 
         data => {
-          this.toastr.success('Blog Edited Successfully', 'Success');
+          this.toastr.success(data.message, 'Success');
           setTimeout(() => {
             this.router.navigate(['/blog', this.currentBlog.blogId]);
           }, 1000);

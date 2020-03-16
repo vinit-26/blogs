@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 export class HomeComponent implements OnInit {
 
   public allBlogs = [];
+  public watingString = 'Please Wait...';
 
   constructor(public blogHttpService: BlogHttpService, private toastr: ToastrService) {
 
@@ -19,10 +20,9 @@ export class HomeComponent implements OnInit {
     this.blogHttpService.getAllBlogs().subscribe(
       data => {
         this.allBlogs = data.data;
-        console.log(data);
       },
       error => {
-        console.log(error.statusText);
+        this.watingString = 'Error: ' +  error.message;
         this.toastr.error(error.statusText);
       });
   }

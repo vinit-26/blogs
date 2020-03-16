@@ -19,7 +19,8 @@ export class BlogViewComponent implements OnInit {
 
   ngOnInit() {
 
-    const myBlogId = this.route.snapshot.paramMap.get('blogId');
+    const myBlogId = this.route.snapshot.paramMap.get(this.route.snapshot.paramMap.keys[0]);
+    // console.log(this.route.snapshot.paramMap.keys);
 
     // this.blogHttpService.getSingleBlogInfo(myBlogId);
 
@@ -29,7 +30,6 @@ export class BlogViewComponent implements OnInit {
       },
 
       error => {
-        console.log(error.statusText);
         this.toastr.error(error.statusText);
       });
 

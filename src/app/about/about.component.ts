@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  public abouteMessage = 'This is a simple Blog application to post blogs.';
+
   constructor() { }
 
   ngOnInit() {
